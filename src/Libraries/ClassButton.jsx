@@ -10,14 +10,14 @@ const ClassButton = ({ itemList, clickItem }) => {
     }
     return (
 
-        <ButtonGroup variant="contained" aria-label="outlined primary button group">
+       
             <Grid container>
                 {
                     itemList.map((item, i) => {
                         return (
                             <Grid item xs={4} key={i}>
                                 <Button onClick={() => { onClick(item.Value) }}
-                                    color={item.IsActive ? "success" : "secondary"}
+                                    backgroundColor={item.IsActive ? "success" : "primary"}
                                 >{item.Name}</Button>
                             </Grid>
                         )
@@ -25,7 +25,7 @@ const ClassButton = ({ itemList, clickItem }) => {
                 }
                 
             </Grid>
-        </ButtonGroup>
+     
     )
 }
 
