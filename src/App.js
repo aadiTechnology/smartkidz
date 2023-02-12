@@ -1,16 +1,16 @@
 import MyRouter from "./Common/MyRouter";
 import { Container, ThemeProvider } from '@mui/material';
 import theme from "./theme"
-import { makeStyles } from '@mui/styles';
-import { StylesProvider } from '@mui/styles';
+// import { makeStyles } from '@mui/styles';
+// import { StylesProvider } from '@mui/styles';
 function App() {
   return (
     <Container>
-      <StylesProvider injectFirst>
+      {/* <StylesProvider injectFirst> */}
       <ThemeProvider  theme={theme}>
       <MyRouter/>
       </ThemeProvider>
-      </StylesProvider>
+      {/* </StylesProvider> */}
     </Container>
   );
 }

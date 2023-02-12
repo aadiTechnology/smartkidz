@@ -22,7 +22,7 @@ const theme = createTheme({
    MuiTextField:{
     defaultProps: {
         margin:"dense",
-        variant:"outlined",
+        variant:"standard",
         fullWidth:true,
       
     }, 
