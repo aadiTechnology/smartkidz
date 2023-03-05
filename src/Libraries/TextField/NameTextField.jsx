@@ -1,6 +1,6 @@
-import { TextField } from '@mui/material'
+import { TextField, Typography,Box } from '@mui/material'
 import React, { useState } from 'react'
-
+import { flexBetween } from '../../CommonStyle'
 const NameTextField = ({label, value, onChange, onBlur}) => {
     const [firstNameError, setFirstNameError] = useState('')
     const onFirstNameBlur = (e) =>{
@@ -16,6 +16,11 @@ const NameTextField = ({label, value, onChange, onBlur}) => {
                 onBlur={onFirstNameBlur}
                 error={firstNameError !== ''}
                 helperText={firstNameError} />
+
+                <Box sx={flexBetween}>
+                  <Typography>vndjsvn</Typography>
+                  <Typography>vndjsvn</Typography>
+                </Box>
     </>
   )
 }
