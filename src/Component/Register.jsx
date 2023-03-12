@@ -1,4 +1,4 @@
-import { Box, Button, TextField ,Paper } from '@mui/material'
+import { Box, Button, TextField ,Paper, Grow } from '@mui/material'
 import React, { useState } from 'react'
 import RegisterApi from '../API/RegisterApi';
 import { IsEmailValid, IsMobileNoValid, IsEmpty } from '../Common/Util';
@@ -9,6 +9,7 @@ import NameTextField from '../Libraries/TextField/NameTextField';
 
    const Register = () => {
    
+    const [checked, setChecked] = useState(true);
     const {Id} = useParams();
     const [firstName, setFirstName] = useState('')
     const [firstNameError, setFirstNameError] = useState(false)
@@ -86,29 +87,22 @@ import NameTextField from '../Libraries/TextField/NameTextField';
     const onLastNameBlur = (value) =>{
         setLastNameError(value)
     }
-    return (
+    return (<Grow in={checked}
+        style={{ transformOrigin: '0 0 1' }}
+        {...(checked ? { timeout: 1500 } : {})}
+    >
         <Box>
             <ClassButton itemList={itemList} clickItem={clickItem}></ClassButton>
            
             <Paper component={Box} p={2}>
-            {/* <TextField  id="outlined-basic" label="First Name" 
-               value={firstName}
-                onChange={(e) => { setFirstName(value) }}
-                onBlur={(e) => { setFirstNameError(IsEmpty('First Name', e.target.value)) }}
-                error={firstNameError !== ''}
-                helperText={firstNameError} /> */}
+            
                 <NameTextField
                 label="First Name"
                 value={firstName}
                 onChange={onFirstNameChange}
                 onBlur={onFirstNameBlur}
                 ></NameTextField>
-            {/* <TextField  id="outlined-basic" label="Last Name" 
-            value={lastName}
-                onChange={(e) => { setLastName(e.target.value) }}
-                onBlur={(e) => { setLastNameError(IsEmpty('Last Name', e.target.value)) }}
-                error={lastNameError !== ''}
-                helperText={lastNameError} /> */}
+            
                  <NameTextField
                 label="Last Name"
                 value={lastName}
@@ -138,9 +132,9 @@ import NameTextField from '../Libraries/TextField/NameTextField';
             <Button  onClick={clickSubmit}  >Submit</Button>
             </Paper>
 
-   
         </Box>
-     
+
+        </Grow>     
     )
 }
 
