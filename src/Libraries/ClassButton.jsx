@@ -10,22 +10,24 @@ const ClassButton = ({ itemList, clickItem }) => {
     }
     return (
 
-       
-            <Grid container>
-                {
-                    itemList.map((item, i) => {
-                        return (
-                            <Grid item xs={4} key={i}>
-                                <Button onClick={() => { onClick(item.Value) }}
-                                    backgroundColor={item.IsActive ? "success" : "primary"}
-                                >{item.Name}</Button>
-                            </Grid>
-                        )
-                    })
-                }
-                
-            </Grid>
-     
+
+        <Grid container>
+            {
+                itemList.map((item, i) => {
+                    return (
+                        <Grid item xs={4} key={i}>
+                            <Button onClick={() => { onClick(item.Value) }}
+                                color={item.IsActive ? "success" : "primary"}
+                                variant="contained">
+                                {item.Name}
+                            </Button>
+                        </Grid>
+                    )
+                })
+            }
+
+        </Grid>
+
     )
 }
 
