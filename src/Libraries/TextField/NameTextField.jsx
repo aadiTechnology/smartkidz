@@ -17,10 +17,7 @@ const NameTextField = ({label, value, onChange, onBlur}) => {
                 error={firstNameError !== ''}
                 helperText={firstNameError} />
 
-                <Box sx={flexBetween}>
-                  <Typography>vndjsvn</Typography>
-                  <Typography>vndjsvn</Typography>
-                </Box>
+                
     </>
   )
 }
