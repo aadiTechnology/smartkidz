@@ -65,7 +65,7 @@ const theme = createTheme({
     },
     h1: {
       fontWeight: 700,
-      fontSize: '12px',
+      fontSize: '30px',
       lineHeight: 1.375
     },
     h2: {
@@ -85,6 +85,15 @@ const theme = createTheme({
     },
   
    
+  },
+  breakpoints: {
+    values: {
+      xs: 0,
+      sm: 600,
+      md: 960,
+      lg: 1280,
+      xl: 1840
+    }
   },
 
 

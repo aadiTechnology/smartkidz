@@ -1,11 +1,11 @@
-import { Box, Button, TextField ,Paper, Grow } from '@mui/material'
+import { Box, Button, TextField ,Paper, Grow ,Container } from '@mui/material'
 import React, { useState } from 'react'
 import RegisterApi from '../API/RegisterApi';
 import { IsEmailValid, IsMobileNoValid, IsEmpty } from '../Common/Util';
 import { useParams } from 'react-router';
 import ClassButton from '../Libraries/ClassButton';
 import NameTextField from '../Libraries/TextField/NameTextField';
-
+import Heading from '../Libraries/Heading';
 
    const Register = () => {
    
@@ -87,7 +87,10 @@ import NameTextField from '../Libraries/TextField/NameTextField';
     const onLastNameBlur = (value) =>{
         setLastNameError(value)
     }
-    return (<Grow in={checked}
+    return (
+    <Container>
+         <Heading heading={'Register'}></Heading>
+    <Grow in={checked}
         style={{ transformOrigin: '0 0 1' }}
         {...(checked ? { timeout: 1500 } : {})}
     >
@@ -134,7 +137,8 @@ import NameTextField from '../Libraries/TextField/NameTextField';
 
         </Box>
 
-        </Grow>     
+        </Grow> 
+        </Container>    
     )
 }
 
