@@ -1,7 +1,7 @@
 import * as React from 'react';
-import { styled, useTheme } from '@mui/material/styles';
+import { styled } from '@mui/material/styles';
 import MuiDrawer from '@mui/material/Drawer';
-import { ListItemText, ListItemButton ,ListItemIcon ,ListItem ,IconButton,Typography,List,Toolbar, Box,AppBar} from '@mui/material';
+import { ListItemText, ListItemButton, ListItemIcon, ListItem, IconButton, Typography, List, Toolbar, Box, AppBar } from '@mui/material';
 import { Outlet } from 'react-router-dom';
 import { SideBarData } from './SideBarData';
 import MenuIcon from '@mui/icons-material/Menu';
@@ -45,8 +45,8 @@ const Drawer = styled(MuiDrawer, { shouldForwardProp: (prop) => prop !== 'open' 
 );
 
 export default function DrawerSidebar() {
-const [open, setOpen] = React.useState(false);
-return (
+  const [open, setOpen] = React.useState(false);
+  return (
     <Box sx={{ display: 'flex' }}>
       <AppBar position="fixed" open={open} sx={{ zIndex: (theme) => theme.zIndex.drawer + 1 }}>
         <Toolbar>
@@ -79,7 +79,7 @@ return (
                       mr: open ? 3 : 'auto',
                       justifyContent: 'center',
                     }}>{item.icon}</ListItemIcon>
-                    <ListItemText sx={{ opacity: open ? 1 : 0 }}  primary={item.title}></ListItemText>
+                    <ListItemText sx={{ opacity: open ? 1 : 0 }} primary={item.title}></ListItemText>
                   </ListItemButton>
                 </Link>
               </ListItem>
@@ -87,7 +87,7 @@ return (
           })}
         </List>
       </Drawer>
-      <Box component="main" sx={{ flexGrow: 1, p: 2}}>
+      <Box component="main" sx={{ flexGrow: 1, p: 2 }}>
         <Toolbar />
         <Outlet />
       </Box>

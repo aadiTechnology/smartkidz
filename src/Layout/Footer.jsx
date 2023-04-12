@@ -1,6 +1,6 @@
 import React from 'react'
 import { Paper,Typography,useTheme } from '@mui/material'
-const drawerWidth = 200;
+
 function Footer() {
   const theme=useTheme();
   return (
